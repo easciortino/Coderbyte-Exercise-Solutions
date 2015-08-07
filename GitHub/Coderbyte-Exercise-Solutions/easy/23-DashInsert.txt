@@ -1,0 +1,23 @@
+/*
+
+Have the function DashInsert(str) insert dashes ('-') between each two odd numbers in str. For example: if str is 454793 the output should be 4547-9-3. Don't count zero as an odd number. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function DashInsert(str) { 
+  var stringArray = str.split("");
+  console.log(stringArray);
+  var newArray = [];
+  for (var i = 0; i<stringArray.length; i++){
+      newArray.push(stringArray[i]);
+      if (stringArray[i+1] !== undefined){
+        if ((stringArray[i]%2 !== 0) && (stringArray[i+1]%2 !== 0)){
+            newArray.push("-");
+        }
+      }
+  }
+  return newArray.join("");
+}

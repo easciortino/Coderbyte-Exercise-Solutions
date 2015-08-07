@@ -1,0 +1,48 @@
+/*
+
+Using the JavaScript language, have the function DivisionStringified(num1,num2) take both parameters being passed, divide num1 by num2, and return the result as a string with properly formatted commas. If an answer is only 3 digits long, return the number with no commas (ie. 2 / 3 should output "1"). For example: if num1 is 123456789 and num2 is 10000 the output should be "12,345". 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function DivisionStringified(num1,num2) { 
+
+  var result = Math.round(num1/num2).toString();
+
+  if (result.length < 4){
+  	return result;
+  }else{
+    var arrayed = result.split("");
+    var count = 1;
+    var stringed = [];
+
+    for (var i = arrayed.length - 1; i >= 0; i--){
+        if (count != 3 || i === 0){
+            stringed.unshift(arrayed[i]);
+            count++;
+        }else{
+            stringed.unshift(arrayed[i]);
+            stringed.unshift(",");
+            count=1;
+        }
+    }
+  }
+  return stringed.join("");
+}
+
+
+// Matt Larsh Solution
+
+
+function DivisionStringified(num1,num2) { 
+  var num = Math.round(num1/num2).toString().split("");
+  var index = -3;
+  while(num.length + index > 0){
+    num.splice(index,0,",");
+    index -= 4;
+  }
+  return num.join("");
+}
+   

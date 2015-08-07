@@ -1,0 +1,41 @@
+/*
+
+Have the function MeanMode(arr) take the array of numbers stored in arr and return 1 if the mode equals the mean, 0 if they don't equal each other (ie. [5, 3, 3, 3, 1] should return 1 because the mode (3) equals the mean (3)). The array will not be empty, will only contain positive integers, and will not contain more than one mode. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+function MeanMode(arr) { 
+    
+    var mean = (arr.reduce(function(a,b){
+        return (a+b);
+    }))/arr.length;
+    
+    console.log(mean);
+    
+    var newArray = [];
+    var count = 1;
+
+    arr.sort();
+
+    while (arr.length > 0){
+        var temp = arr.shift();
+        if (temp == arr[0]){
+            count++;
+        }else{
+            newArray.push([temp, count]);
+            count = 1;
+        }
+    }
+
+    var modeCount = newArray.reduce(function(a,b){
+        return ((a[1] > b[1]) ? a:b);
+    });
+    var mode = modeCount[0];
+    
+    return ((mode === mean) ? 1:0);
+
+}
+
+MeanMode(readline());   

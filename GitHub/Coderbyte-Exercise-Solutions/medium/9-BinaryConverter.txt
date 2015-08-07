@@ -1,0 +1,21 @@
+/*
+
+Have the function BinaryConverter(str) return the decimal form of the binary value. For example: if 101 is passed return 5, or if 1000 is passed return 8. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function BinaryConverter(str) { 
+    var arrayed = str.split("").reverse();
+    var ans = 0;
+    for (var i = 0; i<arrayed.length; i++){
+        console.log(i);
+        if (arrayed[i] === "1"){
+            console.log(i)
+            ans += Math.pow(2,i);
+
+        }
+    } return ans;
+}

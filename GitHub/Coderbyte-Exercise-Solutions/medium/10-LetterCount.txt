@@ -1,0 +1,41 @@
+/*
+
+Have the function LetterCount(str) take the str parameter being passed and return the first word with the greatest number of repeated letters. For example: "Today, is the greatest day ever!" should return greatest because it has 2 e's (and 2 t's) and it comes before ever which also has 2 e's. If there are no words with repeating letters return -1. Words will be separated by spaces. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function LetterCount(str) { 
+    var words = str.split(" ");
+    var count = [];
+    
+    function countRepeats(word){
+        var max = 0;
+        var count = 0;
+        var letters = word.toLowerCase().split("").sort();
+        console.log(letters);
+        for (var i = 0; i<letters.length; i++){
+            if (letters[i]===letters[i+1]){
+                count++;
+            }else{
+                if (count > max){
+                    max = count;
+                }
+                count = 0;
+            }
+        }
+        return max;
+    }
+    
+    var largest = words.reduce(function(a,b){
+        if (countRepeats(a) >= countRepeats(b)){
+            return a;
+        }else{
+            return b;
+        }
+    });
+    
+    return countRepeats(largest)? largest:-1;
+}

@@ -1,0 +1,40 @@
+/*
+
+Have the function CaesarCipher(str,num) take the str parameter and perform a Caesar Cipher shift on it using the num parameter as the shifting number. A Caesar Cipher works by shifting each letter in the string N places down in the alphabet (in this case N will be num). Punctuation, spaces, and capitalization should remain intact. For example if the string is "Caesar Cipher" and num is 2 the output should be "Ecguct Ekrjgt". 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function CaesarCipher(str,num) { 
+    var alpha = "abcdefghijklmnopqrstuvwxyz".split("");
+    var alphaUp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    var arrayed = str.split("");
+    var index;
+    
+    for (var i = 0; i<arrayed.length; i++){
+        if (!arrayed[i].match(/^[A-Za-z]/)){
+            continue;
+        }
+        
+        if (arrayed[i] === arrayed[i].toUpperCase()){
+            alphabet = alphaUp;
+        }else{
+            alphabet = alpha;
+        }
+        newIdentity(arrayed[i], alphabet);
+    }
+    
+    function newIdentity(letter, alphabet){
+        index = alphabet.indexOf(arrayed[i]);
+        
+        if ((index+num)>=alphabet.length){
+            arrayed[i] = alphabet[(index+num)-alphabet.length];
+        }else{
+            arrayed[i] = alphabet[index+num];
+        }
+    }
+    
+    return arrayed.join("");
+}

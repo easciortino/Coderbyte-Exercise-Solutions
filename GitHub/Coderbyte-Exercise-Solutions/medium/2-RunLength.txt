@@ -1,0 +1,34 @@
+/*
+
+Have the function RunLength(str) take the str parameter being passed and return a compressed version of the string using the Run-length encoding algorithm. This algorithm works by taking the occurrence of each repeating character and outputting that number along with a single character of the repeating sequence. For example: "wwwggopp" would return 3w2g1o2p. The string will not contain any numbers, punctuation, or symbols. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+
+*/
+
+
+function RunLength(str) {
+    var arrayed = str.split("");
+    var newString = "";
+    for (var i = 0; i<arrayed.length; i++){
+        var count = 1;
+        
+        if (i === (str.length - 1)){
+            newString += count + arrayed[i];
+        }else{
+            for (var j = i+1; j<str.length; j++){
+                if (arrayed[i] === arrayed[j]){
+                    count++;
+                }else{
+                    break;
+                }
+            }
+            newString += count + arrayed[i];
+            i += count-1;
+        }
+    }
+
+  return newString; 
+         
+} 

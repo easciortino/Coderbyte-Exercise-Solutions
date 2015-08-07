@@ -1,0 +1,29 @@
+/*
+
+Have the function SecondGreatLow(arr) take the array of numbers stored in arr and return the second lowest and second greatest numbers, respectively, separated by a space. For example: if arr contains [7, 7, 12, 98, 106] the output should be 12 98. The array will not be empty and will contain at least 2 numbers. It can get tricky if there's just two numbers! 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function SecondGreatLow(arr) { 
+
+var sorted = arr.sort(function(a, b){return a < b;});
+
+for (i=0; i<sorted.length; i++){
+    if (sorted[i] != sorted[i+1] && sorted[i+1]){
+        var secondMost = sorted[i+1];
+        break;
+    }
+}
+
+for (j=sorted.length-1; j>=0; j--){
+    if (sorted[j] != sorted[j-1] && sorted[j-1]){
+        var secondLeast = sorted[j-1];
+        break;
+    }
+}
+return [secondLeast, secondMost].join(" ");
+
+}

@@ -1,0 +1,21 @@
+/*
+
+Have the function Division(num1,num2) take both parameters being passed and return the Greatest Common Factor. That is, return the greatest number that evenly goes into both numbers with no remainder. For example: 12 and 16 both are divisible by 1, 2, and 4 so the output should be 4. The range for both parameters will be from 1 to 10^3. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function Division(num1,num2) { 
+    divisor = (num1 > num2) ? num2:num1;
+    
+    while (divisor > 1){
+        if (num1%divisor === 0 && num2%divisor === 0){
+            return divisor;
+        }else{
+            divisor--;
+        }
+    }
+    return divisor;
+}

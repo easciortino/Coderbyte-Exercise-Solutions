@@ -1,0 +1,30 @@
+/*
+
+Have the function LetterChanges(str) take the str parameter being passed and modify it using the following algorithm. Replace every letter in the string with the letter following it in the alphabet (ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
+
+Use the Parameter Testing feature in the box below to test your code with different arguments.
+
+*/
+
+
+function LetterChanges(str) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+    // replacing each letter with following letter alphabetically
+  var arrayed = str.toLowerCase().split("").map(function(element){
+    var location = alphabet.indexOf(element);
+    if(location < 25 && location > -1){
+      return alphabet[location+1];
+    }else if(location == 25){
+      return alphabet[0]
+    }else{
+      return element;
+    }
+    
+    // now checking for vowels
+  }).map(function(element){
+    return ((element == "a" || element == "e" || element == "i" || element == "o" || element == "u") ? element.toUpperCase() : element);
+  });
+
+  return arrayed.join(""); 
+}
