@@ -3,13 +3,12 @@ Have the function DashInsert(str) insert dashes ('-') between each two odd numbe
 output should be 4547-9-3. Don't count zero as an odd number. 
 */
 
-function DashInsert(str) { 
-  var stringArray = str.split("");
+function DashInsert(str) {
   var newArray = [];
-  for (var i = 0; i<stringArray.length; i++){
-      newArray.push(stringArray[i]);
-      if (stringArray[i+1] !== undefined){
-        if ((stringArray[i]%2 !== 0) && (stringArray[i+1]%2 !== 0)){
+  for (var i = 0; i<str.length; i++){
+      newArray.push(str[i]);
+      if (str[i+1] !== undefined){
+        if ((str[i]%2 !== 0) && (str[i+1]%2 !== 0)){
             newArray.push("-");
         }
       }
