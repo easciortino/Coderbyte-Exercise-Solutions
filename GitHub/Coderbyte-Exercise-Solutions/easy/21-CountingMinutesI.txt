@@ -1,14 +1,15 @@
 /*
-
-Using the JavaScript language, have the function CountingMinutesI(str) take the str parameter being passed which will be two times (each properly formatted with a colon and am or pm) separated by a hyphen and return the total number of minutes between the two times. The time will be in a 12 hour clock format. For example: if str is 9:00am-10:00am then the output should be 60. If str is 1:00pm-11:00am the output should be 1320. 
-
-Use the Parameter Testing feature in the box below to test your code with different arguments.
-
+Using the JavaScript language, have the function CountingMinutesI(str) take the str parameter being passed which will be two 
+times (each properly formatted with a colon and am or pm) separated by a hyphen and return the total number of minutes between 
+the two times. The time will be in a 12 hour clock format. For example: if str is 9:00am-10:00am then the output should be 60. 
+If str is 1:00pm-11:00am the output should be 1320. 
 */
 
 function CountingMinutesI(str) { 
-  
-    var hoursMins = str.split("-").map(function(element){
+
+// hoursMins - an array of 2 inner arrays representing each time adjusted to 24-hr clock. hrs and mins elements of inner arrays
+
+    var hoursMins = str.split("-").map(function(element){ 
         var ampm = element.slice(-2).toLowerCase();
         element = element.slice(0,-2).split(":").map(function(hrmin){return parseInt(hrmin, 10);});
         
@@ -20,10 +21,14 @@ function CountingMinutesI(str) {
       return element;
     });
     
+// minuteTime - times from hoursMins converted to minutes
+
     var minuteTime = hoursMins.map(function(times){
         return (times[0]*60 + times[1]);
     });
     
+// returns difference between times in minutes
+
     if (minuteTime[0] > minuteTime[1]){
       return (1440-minuteTime[0] + minuteTime[1]); 
     }else{
