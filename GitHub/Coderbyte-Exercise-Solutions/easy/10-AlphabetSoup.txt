@@ -11,3 +11,5 @@ function AlphabetSoup(str) {
             .sort()    // sorts array of character
             .join(""); // joins array of characters into string which is retured
 }
+
+AlphabetSoup("hello");
