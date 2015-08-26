@@ -9,5 +9,4 @@ function SimpleAdding(num) {
       total += i;            // adds current number (i) to total for each loop
     }
   return total; 
-         
 }
