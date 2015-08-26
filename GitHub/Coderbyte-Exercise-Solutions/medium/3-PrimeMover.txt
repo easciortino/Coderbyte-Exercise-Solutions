@@ -1,11 +1,7 @@
 /*
-
-Have the function PrimeMover(num) return the numth prime number. The range will be from 1 to 10^4. For example: if num is 16 the output should be 53 as 53 is the 16th prime number. 
-
-Use the Parameter Testing feature in the box below to test your code with different arguments.
-
+Have the function PrimeMover(num) return the numth prime number. The range will be from 1 to 10^4. For example: if num is 16 
+the output should be 53 as 53 is the 16th prime number. 
 */
-
 
 function PrimeMover(num) { 
     var count = 1;
@@ -17,8 +13,7 @@ function PrimeMover(num) {
             if (prime%i === 0){
                 return findNextPrime(prime);
             }
-        }
-        return prime;
+        } return prime;
     }
     
     if (num === 1){
@@ -28,6 +23,5 @@ function PrimeMover(num) {
             count++;
             prime = findNextPrime(prime);
         }
-    }
-    return prime;
+    } return prime;
 }
