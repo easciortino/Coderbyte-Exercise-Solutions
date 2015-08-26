@@ -1,13 +1,14 @@
 /* 
-Have the function LongestWord(sen) take the sen parameter being passed and return the largest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. 
-
-Use the Parameter Testing feature in the box below to test your code with different arguments.
+Have the function LongestWord(sen) take the sen parameter being passed and return 
+the largest word in the string. If there are two or more words that are the same 
+length, return the first word from the string with that length. Ignore punctuation 
+and assume sen will not be empty. 
 */
 
-
 function LongestWord(sen) { 
-  return sen.replace(/[^a-z^A-Z^0-9^\s)]/g,"").split(" ").reduce(function(max, current) {
-     return (max.length >= current.length ? max : current);
+  return sen.replace(/[^a-z^A-Z^0-9^\s)]/g,"") // removes all non-letter or number characters and replace with an empty string
+            .split(" ")                        // split sen into an array of words using single space separator
+            .reduce(function(max, current) {   // reduce array of words to longest word and return
+     return (max.length >= current.length ? max : current); 
   });
 }
-   
