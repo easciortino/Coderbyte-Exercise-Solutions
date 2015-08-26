@@ -1,0 +1,28 @@
+/*
+Have the function FormattedDivision(num1,num2) take both parameters being passed, divide num1 by num2, and return the result as 
+a string with properly formatted commas and 4 significant digits after the decimal place. For example: if num1 is 123456789 and 
+num2 is 10000 the output should be "12,345.6789". The output must contain a number in the one's place even if it is a zero. 
+*/
+
+function FormattedDivision(num1,num2) { 
+    var arrayed = (Math.round((num1/num2)*10000)/10000).toString().split(".");
+    console.log(arrayed);
+    if (arrayed.length === 1){
+        arrayed.push("0000");
+    }else if(arrayed[1].length < 4){
+        while (arrayed[1].length < 4){
+            arrayed[1] += "0";
+        }
+    }
+    
+    if (arrayed[0] >= 4){
+        var withCommas = arrayed[0].split("");
+    
+        for (var i = arrayed[0].length - 3; i > 0; i-=3){
+            withCommas.splice(i, 0, ",");
+        }
+        arrayed[0] = withCommas.join("");
+    }
+    
+    return arrayed.join(".");
+}
