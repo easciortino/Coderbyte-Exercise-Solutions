@@ -5,9 +5,9 @@ For the test cases, the range will be between 1 and 18.
 */
 
 function FirstFactorial(num) { 
-  	if (num === 1){
-      return 1;
-    }else{
-      return num*FirstFactorial(num-1);
-    }         
+  if (num === 1){
+    return 1;
+  }else{
+    return num*FirstFactorial(num-1);
+  }         
 }
