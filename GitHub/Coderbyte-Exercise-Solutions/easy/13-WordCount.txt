@@ -1,13 +1,8 @@
 /*
-
-Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces. 
-
-Use the Parameter Testing feature in the box below to test your code with different arguments.
-
+Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains 
+(ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces. 
 */
 
-
 function WordCount(str) { 
-	return str.split(" ").length; 
-         
+	return str.split(" ").length;  // split str by single space into array of words and return array length 
 }
