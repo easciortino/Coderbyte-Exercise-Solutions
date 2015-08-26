@@ -5,7 +5,9 @@ being passed and return the string in reversed order.
 
 
 function FirstReverse(str) { 
-  return str.split("").reverse().join("");     
+  return str.split("")    // splits the input string into an array of characters
+            .reverse()    // reverse array 
+            .join("");    // splits the input string into an array of characters
 }
 
 
