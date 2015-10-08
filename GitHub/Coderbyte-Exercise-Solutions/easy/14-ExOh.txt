@@ -7,10 +7,5 @@ For example: if str is "xooxxxxooxo" then the output should return false because
 function ExOh(str) { 
  var numExes = str.replace(/o/gi, "").length;
  var numOhs = str.replace(/x/gi, "").length;
- 
- if (numExes == numOhs){
- 	return true;
- }else{
- 	return false;
- }        
+ return numExes == numOhs ? true : false;
 }
