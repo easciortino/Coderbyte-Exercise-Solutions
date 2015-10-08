@@ -4,7 +4,5 @@ in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation 
 */
 
 function AlphabetSoup(str) { 
-  return str.split("") // splits the input string into an array of characters
-            .sort()    // sorts array of character
-            .join(""); // joins array of characters into string which is retured
+  return str.split("").sort().join("");
 }
