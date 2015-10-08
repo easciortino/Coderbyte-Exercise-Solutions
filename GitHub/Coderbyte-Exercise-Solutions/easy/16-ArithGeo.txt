@@ -26,12 +26,6 @@ function ArithGeo(arr) {
             }
         } return true;
     }    
-        
-    if(isArithmetic()){
-        return "Arithmetic";
-    }else if(isGeometric()){
-        return "Geometric";
-    }else{
-        return -1;
-    }
+    
+   return isArithmetic() ? "Arithmetic" : isGeometric() ? "Geometric" : -1; 
 }
