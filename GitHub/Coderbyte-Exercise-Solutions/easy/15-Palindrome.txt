@@ -5,5 +5,5 @@ also "racecar" backwards. Punctuation and numbers will not be part of the string
 */
 
 function Palindrome(str) {  
-  return (str.replace(/\s/g, ‘’).toLowerCase() == str.replace(/\s/g, '').split('').reverse().join(‘’).toLowerCase());
+  return (str.replace(/\s/g, '').toLowerCase() == str.replace(/\s/g, '').split('').reverse().join('').toLowerCase());
 }
