@@ -6,41 +6,13 @@ number with no commas (ie. 2 / 3 should output "1"). For example: if num1 is 123
 */
 
 function DivisionStringified(num1,num2) { 
-
-  var result = Math.round(num1/num2).toString();
-
-  if (result.length < 4){
-  	return result;
-  }else{
-    var arrayed = result.split("");
-    var count = 1;
-    var stringed = [];
-
-    for (var i = arrayed.length - 1; i >= 0; i--){
-        if (count != 3 || i === 0){
-            stringed.unshift(arrayed[i]);
-            count++;
-        }else{
-            stringed.unshift(arrayed[i]);
-            stringed.unshift(",");
-            count=1;
-        }
-    }
+    
+  var reverseIndex = -3;
+  var arrayed = Math.round(num1/num2).toString().split("");
+  
+  while(arrayed.length + reverseIndex > 0){
+    arrayed.splice(reverseIndex, 0, ",");
+    reverseIndex -= 4;
   }
-  return stringed.join("");
+  return arrayed.join("");
 }
-
-
-// Matt Larsh Solution
-
-
-function DivisionStringified(num1,num2) { 
-  var num = Math.round(num1/num2).toString().split("");
-  var index = -3;
-  while(num.length + index > 0){
-    num.splice(index,0,",");
-    index -= 4;
-  }
-  return num.join("");
-}
-   
