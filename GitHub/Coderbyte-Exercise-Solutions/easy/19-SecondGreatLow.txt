@@ -6,22 +6,26 @@ array will not be empty and will contain at least 2 numbers. It can get tricky i
 
 function SecondGreatLow(arr) { 
 
-var sorted = arr.sort(function(a, b){return a < b;});
+var sortedArray = arr.sort(function(a, b){return a < b;});
 
-for (i=0; i<sorted.length; i++){
-    if (sorted[i] != sorted[i+1] && sorted[i+1]){
-        var secondMost = sorted[i+1];
+for (i=0; i<sortedArray.length; i++){
+    if (sortedArray[i] != sortedArray[i+1] && sortedArray[i+1]){
+        var secondMost = sortedArray[i+1];
         break;
     }
+    var secondMost = sortedArray[1];
 }
 
-for (j=sorted.length-1; j>=0; j--){
-    if (sorted[j] != sorted[j-1] && sorted[j-1]){
-        var secondLeast = sorted[j-1];
+for (j=sortedArray.length-1; j>=0; j--){
+    if (sortedArray[j] != sortedArray[j-1] && sortedArray[j-1]){
+        var secondLeast = sortedArray[j-1];
         break;
     }
+    var secondLeast = sortedArray[0];
 }
 
-return [secondLeast, secondMost].join(" ");
+var newArray = [secondLeast, secondMost];
 
+return newArray.join(" "); 
+         
 }
