@@ -5,12 +5,5 @@ exactly three characters between a and b). Otherwise return the string false.
 */
 
 function ABCheck(str) { 
-  for (var i = 0; i<str.length; i++){ 
-    if (str[i] == "a"){
-      if (str[i+4] == "b"){
-        return true;
-      }
-    }
-  }
-  return false; 
+   return (str.match(/(a.{3}b|b.{3}a)/ig)) ? true : false;
 }
