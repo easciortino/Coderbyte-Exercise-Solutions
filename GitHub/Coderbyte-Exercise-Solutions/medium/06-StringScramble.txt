@@ -5,11 +5,14 @@ characters can be rearranged to match str2, otherwise return the string false. F
 */
 
 function StringScramble(str1,str2) {
-    var chars = str2.split("");
-    var match;
-    for (var i = 0; i<str2.length; i++){
-      if (str1.match(chars[i]) === null){
-          return false;
-      }
+    var chars = str2.split("")
+    
+    while (chars.length > 0){
+        var check = chars.shift();
+        if (str1.indexOf(check) > -1){
+            str1 = str1.replace(check, "");
+        }else{
+            return false;
+        }
     } return true;
 }
